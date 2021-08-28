@@ -1,1 +1,5 @@
-# Professional-ReadMe-Generator
+## Title
+${data.title}
+
+### Github
+${data.github}
