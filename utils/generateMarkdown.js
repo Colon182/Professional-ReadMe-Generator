@@ -4,6 +4,8 @@ function renderLicenseBadge(license) {
   if(license !== "none") {
     // find right link for license badges, one below is example only
     return `www.github.com/license/${data.license}/ffdsafasdfs`    
+  }else {
+    return ``;
   }
 }
 
@@ -13,6 +15,8 @@ function renderLicenseLink(license) {
   if (license !== "none") {
     // find links for licenses
     return `licenselink.com/${data.license}`;
+  }else {
+    return ``;
   }
 }
 
