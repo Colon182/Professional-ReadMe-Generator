@@ -28,7 +28,7 @@ const questions = [
         type: 'list',
         name: 'License',
         message: 'What type of license are you using?',
-        choices: ['','','','none']
+        choices: ['mit','lgpl-3.0','mpl-2.0', 'agpl-3.0','none']
     },
     {
         type: 'input',

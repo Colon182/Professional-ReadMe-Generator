@@ -13,8 +13,7 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license !== "none") {
-    // find links for licenses 
-    return `licenselink.com/${data.license}`;
+    return `https://api.github.com/licenses/${data.license}`;
   }else {
     return ``;
   }
@@ -25,7 +24,7 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if(license !== "none") {
     return `# License
-    Licensed under ${data.license} license.`;
+    Licensed under ${renderLicenseBadge()} [${data.license}](${renderLicenseLink()}) license.`;
   } else {
     return ``;
   }
