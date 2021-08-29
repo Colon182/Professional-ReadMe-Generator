@@ -3,8 +3,9 @@
 function renderLicenseBadge(license) {
   if(license !== "none") {
     // find right link for license badges, one below is example only
-    return `www.github.com/license/${data.license}/ffdsafasdfs`    
-  }else {
+    return `[![License](https://img.shields.io/badge/license-${data.license}-green)](./LICENSE)`    
+  }
+  else {
     return ``;
   }
 }
@@ -14,7 +15,8 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   if (license !== "none") {
     return `https://api.github.com/licenses/${data.license}`;
-  }else {
+  }
+  else {
     return ``;
   }
 }
@@ -24,8 +26,9 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if(license !== "none") {
     return `# License
-    Licensed under ${renderLicenseBadge()} [${data.license}](${renderLicenseLink()}) license.`;
-  } else {
+    Licensed under [${data.license}](${renderLicenseLink()}) license.`;
+  } 
+  else {
     return ``;
   }
 }
@@ -33,6 +36,7 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+  ${renderLicenseBadge(data.license)}
   ## Description
   ${data.description}
   
