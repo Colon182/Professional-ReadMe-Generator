@@ -2,8 +2,7 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if(license !== "none") {
-    // find right link for license badges, one below is example only
-    return `[![License](https://img.shields.io/badge/license-${data.license}-green)](./LICENSE)`    
+    return `[![License](https://img.shields.io/badge/license-${license}-green)](./LICENSE)`    
   }
   else {
     return ``;
@@ -14,7 +13,7 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license !== "none") {
-    return `https://api.github.com/licenses/${data.license}`;
+    return `https://api.github.com/licenses/${license}`;
   }
   else {
     return ``;
@@ -26,7 +25,7 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if(license !== "none") {
     return `# License
-    Licensed under [${data.license}](${renderLicenseLink()}) license.`;
+    Licensed under ${license} license.`;
   } 
   else {
     return ``;
@@ -57,14 +56,14 @@ function generateMarkdown(data) {
   ${data.contributing}
   
   ## Tests
-  ${data.tests}
+  ${data.test}
   
   ## Questions
   Want to reach me or see more of my work and projects? My Github is linked below and my Email is listed as well.
   * [Github](https://github.com/${data.github})
   * ${data.email}
 
-  ${renderLicenseSection(data)}
+  ${renderLicenseSection(data.license)}
 `;
 }
 
